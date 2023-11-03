@@ -1,0 +1,49 @@
+<%- include("partials/header.ejs") %>
+
+<div class="search-section">
+    <form class="form" action="/search" method="POST">
+        <% if (locals.articles) { %>
+            <label for="searchTerm">Search for another term:</label>
+        <% } else { %>
+            <label for="searchTerm">Input the term you want to search for:</label>
+        <% } %>
+        <input type="text" id="searchTerm" name="searchTerm">
+        <label for="fromDate">From Date:</label>
+        <input type="date" id="fromDate" name="fromDate">
+        <label for="toDate">To Date:</label>
+        <input type="date" id="toDate" name="toDate">
+        <button type="submit" >Submit</button>
+    </form>
+</div>
+
+<div class="results-section">
+    <% if (locals.articles) { %>
+        <div class="result-summary"> <div id="totalArticles"><%= articleQuantity %> </div> &nbsp;articles found for <%= term %> form <%= fromDate %> to <%= toDate %></div>
+        
+        <div class="foundTopics"> Found Topics: 
+            <% filteredTopics.forEach(topic => { %>
+                <button class="topic"><%= topic.topic %></button>
+            <% }) %>
+        </div>
+
+        <div class="articles-container">
+            <% articles.forEach(article => { %>
+                <div class="card">
+                    <div>
+                        <h2 class="article-title"> <%= article.title %> </h2>
+                        <div class="article-url"><a href="<%= article.linkToArticle %>">Link to full article</a></div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="article-topic"><%= article.topic %></div>
+                        <div class="article-date"><%= article.date%></div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+        <div class="more-articles">
+            <button id="moreArticlesButton">See more</button>
+        </div>
+</div>
+    <% } %>
+    
+<%- include("partials/footer.ejs") %>

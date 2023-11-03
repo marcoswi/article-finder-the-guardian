@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---- Header ----- */
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.guardian-logo {
+    width: 300px;
+    margin: 10px auto;
+}
+
+.header h1 {
+    text-align: right;
+    font-size: 20px;
+    width: 350px;
+    margin: auto;
+    font-family: 'Rokkitt', serif;
+}
+
+/* ---- Main ----- */
+main {
+    min-height: 500px;
+    width: 100%;
+    display: flex;
+    border-top: 1px lightgray solid;
+    font-family: 'Roboto Serif', serif;
+}
+
+.search-section{
+    width: 15%;
+    margin: 0 10px;
+    padding: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form label {
+    margin-top: 10px;
+}
+
+.form button {
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+.results-section {
+    width: 85%;
+    padding: 10px;
+    background-color: lightgray;
+}
+
+.result-summary {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.foundTopics {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.foundTopics button {
+    margin: 0 5px;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 0 2px;
+}
+
+.articles-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+.card {
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: darkgray;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    padding: 20px;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.article-title {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.article-url a {
+    text-decoration: none;
+    color: grey;
+}
+
+
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.more-articles {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.more-articles button{
+    border-radius: 5px;
+    border: 1px black solid;
+    padding: 10px;
+}
+
+.hidden-button {
+    display: none;
+}
+
+
+/* ---- Footer ----- */
+
+.footer {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(9, 9, 125);
+}
